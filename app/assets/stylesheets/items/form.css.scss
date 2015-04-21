@@ -1,0 +1,18 @@
+.form {
+  input[name="commit"] {
+    width: 140px;
+  }
+
+  .form-item {
+    @include inline-block;
+
+    .error {
+      margin-top: 10px;
+      color: red;
+    }
+  }
+  
+  input[name="item[name]"] {
+    width: 200px;
+  }
+}

@@ -1,0 +1,44 @@
+.item-element {
+  width: 640px;
+  margin-bottom: 20px;
+  
+  .item-element__show {
+    & > div {
+      @include inline-block;
+      vertical-align: middle;
+
+      &.item-element__name {
+        width: 200px;
+      }
+
+      &.item-element__picture {
+        width: 100px;
+        height: 100px;
+        margin: 0 10px;
+        border: 1px solid #bebebe;
+        background-color: #bebebe;
+
+        img {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      &.item-element__edit-tools {
+        width: 280px;
+        text-align: right;
+        
+        a {
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+
+  .item-element__edit-form {
+    margin-top: 10px;
+    padding: 40px 0 20px;
+    border-top: 1px dotted #bebebe;
+    border-bottom: 1px dotted #bebebe;
+  }
+}

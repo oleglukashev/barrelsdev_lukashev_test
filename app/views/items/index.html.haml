@@ -1,0 +1,12 @@
+%h1 Items
+
+%h2 Форма добавления item'a
+
+.item-create
+  = render partial: 'items/form', locals: { for_item: @new_item, url: items_path }
+
+%h2 Список item'ов
+
+.items-list
+  - @items.each do |item|
+    = render item

@@ -1,0 +1,12 @@
+.item-element{ data: { item: item.id } }
+  .item-element__show
+    .item-element__name
+      = "#{item.id}. #{item.name}"
+    .item-element__picture= image_tag item.picture.mini
+    .item-element__edit-tools
+      = link_to "редактировать", "#", class: "item-element__edit"
+      = link_to "удалить", item, remote: true, method: :delete, class: "item-element__delete", data: { confirm: "Удалить item?" }
+  .item-element__edit-form.hide
+    = render partial: 'items/form', locals: { for_item: item, url: item_path(item) }
+    %p
+      = link_to "Отменить редактирование", "#", class: "item-element__cancel"

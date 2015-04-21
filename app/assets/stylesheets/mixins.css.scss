@@ -1,0 +1,6 @@
+@mixin inline-block() {
+  display: -moz-inline-block;
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+}

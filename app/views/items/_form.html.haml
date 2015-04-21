@@ -1,0 +1,7 @@
+.item-form
+  = form_for for_item, url: url, remote: true, html: { class: "form", multipart: true, 'data-type' => :json } do |f|
+    .form-item
+      = f.text_field :name
+    .form-item
+      = f.file_field :picture
+    = f.submit "Отправить"

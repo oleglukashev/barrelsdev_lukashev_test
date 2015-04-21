@@ -1,0 +1,22 @@
+.item-element{ "data-item" => "{{item.id}}"}
+  .item-element__show
+    .item-element__name
+      {{item.id}}. {{item.name}}
+    .item-element__picture
+      %img{:src => '{{item.picture.mini.url}}' }
+    .item-element__edit-tools
+      %a.item-element__edit{:href => "#"} редактировать
+      %a.item-element__delete{"data-confirm" => "Удалить item?", "data-method" => "delete", "data-remote" => "true", :href => "/items/{{item.id}}", :rel => "nofollow"} удалить
+  .item-element__edit-form.hide
+    .item-form
+      %form#new_item.form{:id => "edit_item_{{item.id}}", "accept-charset" => "UTF-8", :action => "/items/{{item.id}}", "data-remote" => "true", "data-type" => "json", :enctype => "multipart/form-data", :method => "post"}
+        %div{:style => "display:none"}
+          %input{:name => "utf8", :type => "hidden", :value => "✓"}
+          %input{:name => "_method", :type => "hidden", :value => "patch"}
+        .form-item
+          %input#item_name{:name => "item[name]", :type => "text", :value => "{{item.name}}"}
+        .form-item
+          %input#item_picture{:name => "item[picture]", :type => "file"}
+        %input{:name => "commit", :type => "submit", :value => "Отправить"}
+    %p
+      %a.item-element__cancel{:href => "#"} Отменить редактирование
