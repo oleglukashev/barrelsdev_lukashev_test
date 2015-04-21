@@ -40,4 +40,7 @@ $ ->
       edit_block.removeClass('hide')
     else
       edit_block.addClass('hide')
+
+    $(@).closest('.item-element__show').next()
+      .find('input[name="item[name]"]').focus()
   
